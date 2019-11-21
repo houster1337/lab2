@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final TextView childText = (TextView) findViewById(R.id.textChild);
+
         final EditText edittext = (EditText) findViewById(R.id.editText2);
         expandableListView = (ExpandableListView) findViewById(R.id.simpleExpandableListView);
         topText = "/";
@@ -53,11 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-
-
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
                 dis.flagChanged = true;
+
                 if (partemp != -1 && chitemp != -1) {
 
                     int index2 = expandableListView.getFlatListPosition(ExpandableListView.getPackedPositionForChild(partemp, chitemp));
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 if(parent.isGroupExpanded(groupPosition)){
-                        topText ="/";
+                        topText = "/";
                 }
                 else {
                     topText = ("/" + parents.get(groupPosition));
